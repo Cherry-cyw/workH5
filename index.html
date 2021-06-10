@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration:none;
+            color:white;
+        }
+        .top{
+            height:50px;
+            line-height:50px;
+            background-color:black;
+            color:white;
+            display:flex;
+            margin:0 auto;
+            overflow:hidden;
+            justify-content:center;
+        }
+        .top div{
+            padding-left:35px;
+        }
+        .top a:hover{
+            color:orange;
+        }
+        .iting, .vip, .mei, .ku{
+            display:flex;
+            font-size:13px;
+            color:#777;
+        }
+        .iting span{
+            width:20px;
+            height:20px;
+            background:url(images/8x7cejPCVRaEBEDHg7ezDs.png);
+            background-position:-105px 2px;
+            margin-top:15px;
+        }
+        .vip span{
+            width:20px;
+            height:20px;
+            background:url(images/8x7cejPCVRaEBEDHg7ezDs.png);
+            background-position:-103px -22px;
+            margin-top:15px;
+        }
+        .ku span{
+            width:20px;
+            height:20px;
+            background:url(images/8x7cejPCVRaEBEDHg7ezDs.png);
+            background-position:-230px -24px;
+            margin-top:15px;
+        }
+        .mei span{
+            width:20px;
+            height:20px;
+            background:url(images/8x7cejPCVRaEBEDHg7ezDs.png);
+            background-position:-168px -22px;
+            margin-top:15px;
+        }
+        .bigf{
+            font-size:20px;
+        }
+        .sea{
+            margin-top:10px;
+        }
+        .two{
+            width:100%;
+            display:flex;
+            overflow:hidden;
+            margin-bottom:180px;
+        }
+        .left{
+            width:60%;
+        }
+        .head{
+            font-size:30px;
+            margin-left:400px;
+            margin-top:70px;
+            margin-bottom:30px;
+        }
+        .left a{
+            color:orange;
+        }
+        .lineo{
+            display:flex;
+            margin-left:260px;
+        }
+        .lineo div{
+            color:#555;
+            padding-left:20px;
+        }
+        .origin{
+            font-size:14px;
+            padding-left:290px;
+        }
+        .song{
+            height:700px;
+            overflow:auto;
+            margin:0 auto;
+            justify-content:center;
+        }
+        .song p{
+            justify-content:center;
+            text-align:center;
+        }
+        .right{
+            width:40%;
+        }
+        .xiyangyang{
+            width:290px;
+            height:290px;
+            border-radius:50%;
+            margin-left:140px;
+            margin-top:70px;
+        }
+        @keyframes rot{
+            0% {
+                transform:rotate(0);
+            }
+            100% {
+                transform:rotate(360deg);
+            }
+        }
+        .xiyangyang img:nth-child(1){
+            width:300px;
+            height:300px;
+            padding:5px;
+            border-radius:50%;
+            animation:rot 10s linear 1s infinite normal;
+            z-index:-1;
+        }
+        .xiyangyang img:nth-child(2){
+            width:310px;
+            height:310px;
+            border-radius:50%;
+            position:relative;
+            top:-310px;
+        }
+        .playprocess{
+            display:flex;
+            /* margin-left:80px; */
+            justify-content:center;
+            margin-top:40px;
+        }
+        #playbtn{
+            width:45px;
+            height:45px;
+            background:url(images/ft4wYB2sBrTzcGpwteSquz.jpg);
+            background-position:168px 88px;
+        }
+        #prograssBar {
+            float: left;
+            position: relative;
+            width: 300px;
+            height: 4px;
+            background-color:#ccc;
+            display: inline;
+            margin-top:20px;
+            margin-left:5px;
+        }
+        .prograssBar {
+            width: 0px;
+            height: 4px;
+            background: #ffcd2d;
+        }
+        #wp_bufBar {
+            width: 0px;
+            height: 4px;
+        }
+        #processBtn {
+            width: 10px;
+            height: 10px;
+            background: url(images/8x7cejPCVRaEBEDHg7ezDs.png) 0 -128px;
+            position: absolute;
+            top: -3px;
+        }
+        #tim{
+            margin-left:10px;
+            margin-top:15px;
+        }
+        #sound{
+            width:25px;
+            height:25px;
+            background:url(images/ft4wYB2sBrTzcGpwteSquz.jpg);
+            background-position:-65px 0px;
+            margin-left:10px;
+            margin-top:15px;
+        }
+        .download{
+            width:200px;
+            height:48px;
+            background:url(images/ft4wYB2sBrTzcGpwteSquz.jpg);
+            background-position:0px -40px;
+            display:flex;
+            line-height:50px;
+            margin-left:200px;
+            margin-top:90px;
+        }
+        .bg{
+            width:18px;
+            height:15px;
+            background:url(images/ft4wYB2sBrTzcGpwteSquz.jpg);
+            margin-top:20px;
+            margin-left:20px;
+            margin-right:8px;
+        }
+        .commitone{
+            width:300px;
+            height:54px;
+            margin-left:140px;
+            margin-top:180px;
+            display:flex;
+        }
+        .guo{
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            margin-left:5px;
+        }
+        .cot{
+            width:245px;
+            height:54px;
+            background:url(images/showAdBg.jpg);
+            font-size:12px;
+            margin-left:15px;
+        }
+        .cot img{
+            width:18px;
+            height:15px;
+            margin-right:5px;
+        }
+        .cot p:nth-child(1){
+            margin-left:20px;
+            margin-top:3px;
+            color:#777;
+        }
+        .cot p:nth-child(2){
+            margin-left:20px;
+            margin-top:-2px;
+        }
+        .cot span{
+            margin-left:50px;
+            color:blue;
+        }
+        .committwo{
+            width:980px;
+            height:300px;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        .committwo p{
+            font-size:20px;
+            margin-left:15px;
+        }
+        .committ{
+            font-size:15px;
+            margin-left:50px;
+        }
+        .co{
+            display:flex;
+        }
+        .co img{
+            width:80px;
+            height:80px;
+            margin-right:40px;
+            margin-top:15px;
+        }
+        textarea{
+            font-size:20px;
+            color:#777;
+            margin-top:20px;
+        }
+        .ct{
+            margin-top:15px;
+            display:flex;
+        }
+        .ct img{
+            width:20px;
+            height:19px;
+            margin-left:120px;
+        }
+        .yishu{
+            margin-left:620px;
+        }
+        #btn{
+            width:80px;
+            height:30px;
+            color:white;
+            background-color:#ffcd2d;
+            border:1px solid #ffcd2d;
+            border-radius:10px;
+            margin-left:40px;
+            margin-top:-5px;
+        }
+        .committhree{
+            width:980px;
+            margin:0 auto;
+            position:relative;
+            justify-content:center;
+            overflow:hidden;
+        }
+        .jingcai{
+            font-size:20px;
+            margin-left:15px;
+        }
+        li{
+            list-style:none;
+        }
+        .bottom{
+            width:500px;
+            height:50px;
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            position:relative;
+            bottom:0px;
+            margin-left:220px;
+        }
+        .bottom a{
+            width:35px;
+            height:35px;
+            color:black;
+            background-color:#eee;
+            border:1px solid #eee;
+            border-radius:50%;
+            margin-left:20px;
+            text-align:center;
+            line-height:35px;
+            font-size:15px;
+        }
+        .bottom a:nth-child(2){
+            background-color:orange;
+            border:1px solid orange;
+            color:white;
+        }
+        .bottom span{
+            margin-left:20px;
+        }
+        #appe img{
+            width:90px;
+            height:90px;
+            margin-left:15px;
+            margin-right:40px;
+            margin-top:15px;
+        }
+        #appe a{
+            color:white;
+        }
+        #appe div:hover a{
+            color:black;
+        }
+    </style>
+</head>
+<body> 
+    <div class="top">
+        <div class="bigf"><img src="images/EBbGwpYnuxzNj2n4pu4QWG.jpg"/></div>
+        <div class="bigf"><a href="">首页</a></div>
+        <div class="bigf"><a href="">榜单</a></div>
+        <div class="bigf"><a href="">歌手</a></div>
+        <div class="bigf"><a href="">下载酷我客户端</a></div>
+        <div class="mei"><span></span><a href="">美女秀</a></div>
+        <div class="ku"><span></span><a href="">酷我耳机</a></div>
+        <div class="vip"><span></span><a href="">vip会员</a></div>
+        <div class="iting"><span></span><a href="">i听</a></div>
+        <div><a href="">更多服务</a></div>
+        <div><a href="">登录</a></div>
+        <div><a href="">^</a></div>
+        <div><img src="images/hRzX3n2eFHEyPd93FriVox.png" class="sea"></div>
+    </div>
+    <div class="two">
+        <div class="left">
+            <div class="head">喜羊羊</div>
+            <div>
+                <div class="lineo">
+                    <div>专辑：<a href="">儿歌大全</a></div>
+                    <div>歌手：<a href="">华语群星</a></div>
+                    <div>分享 &nbsp;&nbsp;<img src="images/bbHRbrtQkXjFLRSChCcxPi.jpg">&nbsp;&nbsp;<a href="">评论</a></div>
+                </div>
+                <p class="origin">上传时间：2015-10-02 歌曲来源：民大相思湖网球社</p>
+            </div>
+            <hr/>
+            <div class="song">
+                <p>喜羊羊</p>
+                <p>美羊羊</p>
+                <p>懒羊羊</p>
+                <p>沸羊羊</p>
+                <p>慢羊羊</p>
+                <p>软绵绵</p>
+                <p>红太狼</p>
+                <p>灰太狼</p>
+                <p>别看我只是一只羊</p>
+                <p>绿草因为我变得更香</p>
+                <p>天空因为我变得更蓝</p>
+                <p>白云因为我变得柔软</p>
+                <p>别看我只是一只羊</p>
+                <p>羊儿的聪明难以想象</p>
+                <p>天再高心情一样奔放</p>
+                <p>每天都追赶太阳</p>
+                <p>有什么难题 去牵拌我 都不会去心伤</p>
+                <p>有什么危险 在我面前 也不会去慌乱</p>
+                <p>就算有狼群 把我追捕 也当作游戏一场</p>
+                <p>在什么时间 都爱开心 笑容都会飞翔</p>
+                <p>就算会摔倒 站了起来 永远不会沮丧</p>
+                <p>在所有天气 拥有叫人 大笑的力量</p>
+                <p>虽然我只是羊</p>
+                <p>喜羊羊</p>
+                <p>美羊羊</p>
+                <p>懒羊羊</p>
+                <p>沸羊羊</p>
+                <p>慢羊羊</p>
+                <p>软绵绵</p>
+                <p>红太狼</p>
+                <p>灰太狼</p>
+                <p>别看我只是一只羊</p>
+                <p>绿草因为我变得更香</p>
+                <p>天空因为我变得更蓝</p>
+                <p>白云因为我变得柔软</p>
+                <p>有什么难题 去牵拌我 都不会去心伤</p>
+                <p>有什么危险 在我面前 也不会去慌乱</p>
+                <p>就算有狼群 把我追捕 也当作游戏一场</p>
+                <p>在什么时间 都爱开心 笑容都会飞翔</p>
+                <p>就算会摔倒 站了起来 永远不会沮丧</p>
+                <p>在所有天气 拥有叫人 大笑的力量</p>
+                <p>虽然我只是羊</p>
+                <p>虽然我只是羊</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="xiyangyang">
+                <img src="images/nJA5uhS7NxNWUhVyAzNN5q.jpg">
+                <img src="images/splice2.png">
+            </div>
+            <audio autoplay id="myaudio">
+                <source src="music.mp3">
+            </audio>
+            <div class="playprocess">
+                <div id="playbtn"></div>
+                <div id="prograssBar">
+                    <div id="wp_bufBar">
+                        <div class="prograssBar" id="wp_processBar"></div>
+                        <a href="##" id="processBtn" style="left: 0;"></a>
+                    </div>
+                </div>
+                <div id="tim">00:00</div>
+                <div id="sound"></div>
+            </div>
+            <div class="download"><div class="bg"></div>免费下载这首歌</div>
+            <div class="commitone">
+                <img src="images/郭子仪.jpg" class="guo">
+                <div class="cot">
+                    <p>郭子仪————H5班</p>
+                    <p><img src="images/gif.gif">喜羊羊与灰太狼<span>去现场 ></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="committwo">
+        <p>评论<span class="committ"><span id="yiqi">1703</span>条评论</span></p>
+        <hr/>
+        <div class="co">
+            <img src="images/郭子仪.jpg">
+            <textarea style="width:850px; height:120px;" id="inp" onkeyup="checkCount(this)">分享你的音乐见解</textarea>
+        </div>
+        <div class="ct">
+            <img src="images/commenticon.png">
+            <div class="yishu">已输入<span id="countt">0</span>个字</div>
+            <button id="btn">评论</button>
+        </div>
+    </div>
+    <div class="committhree">
+        <p class="jingcai">精彩评论</p>
+        <hr/>
+        <div id="appe"></div>
+        <div class="bottom">
+            <a href="" ><</a>
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <span>...</span>
+            <a href="">17</a>
+            <a href="">></a>
+        </div>
+    </div>
+    
+</body>
+<script>
+    var mymusic=document.getElementById("myaudio");
+    var playtime=document.getElementById("tim");
+    var playbtn=document.getElementById("playbtn");
+    var mutebtn=document.getElementById("sound")
+    var processbtn=document.getElementById("processBtn");
+    var processbar=document.getElementById("wp_processBar");
+    var btn=document.getElementById("btn");
+    var inp=document.getElementById("inp");
+    var appen=document.getElementById("appe");
+    var countt=document.getElementById("countt");
+    var yiqi=document.getElementById("yiqi");
+
+    //音乐播放器
+    function proces(){
+      var per=mymusic.currentTime/mymusic.duration;
+      processbtn.style.marginLeft=per*300+"px";
+      processbar.style.width=per*300+"px";
+    }
+
+    var num=0;
+    playbtn.onclick=function(){
+        num++;
+        var intt;
+        if(num%2==1){
+            mymusic.play();
+            playbtn.style.backgroundPositionY=88+"px";
+            playbtn.style.backgroundPositionX=71+"px";
+            intt=setInterval(function(){
+                proces();
+                var curtime=parseInt(mymusic.currentTime);
+                var minute=parseInt((curtime/60)%60);
+                var second=curtime%60;
+                var timm="";
+                if(minute<10){
+                    timm+="0";
+                }
+                timm+=minute+":";
+                if(second<10){
+                    timm+="0";
+                }
+                timm+=second;
+                playtime.innerHTML=timm;
+
+                if(timm=="02:48"){
+                    mymusic.pause();
+                    playbtn.style.backgroundPositionY=88+"px";
+                    playbtn.style.backgroundPositionX=168+"px";
+                }
+
+            },1000)
+        }
+        else{
+            mymusic.pause();
+            playbtn.style.backgroundPositionY=88+"px";
+            playbtn.style.backgroundPositionX=168+"px";
+            clearInterval(intt);
+        }
+    } 
+
+
+    //静音
+    var count=0;
+    mutebtn.onclick=function(){
+        count++;
+        if(count%2==1){
+            mymusic.muted=true;
+            mutebtn.style.backgroundPositionX=-41+"px";
+        }
+        else{
+            mymusic.muted=false;
+            mutebtn.style.backgroundPositionX=-65+"px";
+        }
+    }
+
+
+    //输入框
+    var ct=0;
+    inp.onclick=function(){
+        ct++;
+        if(ct==1){
+            inp.value="";
+        }
+    }
+
+    //字数
+    function checkCount(){
+        var len=inp.value.length;
+        countt.innerHTML=len;
+    }
+    
+
+    btn.onclick=function(){
+        var str=inp.value;
+        var c=yiqi.innerHTML;
+
+        if(inp.value==""){
+            alert("评论内容不能为空！");
+        }else{
+            yiqi.innerHTML=++c;
+            
+            var now=new Date();
+            var mon=now.getMonth()+1;
+            var dat=now.getDate();
+            var hou=now.getHours();
+            var min=now.getMinutes();
+            var sec=now.getSeconds();
+
+            if(mon<10){
+                mon="0"+mon;
+            }
+            if(dat<10){
+                dat="0"+dat;
+            }
+            if(hou<10){
+                hou="0"+hou;
+            }
+            if(min<10){
+                min="0"+min;
+            }
+            if(sec<10){
+                sec="0"+sec;
+            }
+            var tim1=now.getFullYear()+"-"+mon+"-"+dat;
+            var tim2=hou+":"+min+":"+sec;
+            var ctim=tim1+"  "+tim2;
+
+            var obj={
+                val:"none",
+                clock:"none"
+            }
+            obj['val']=str;
+            obj['clock']=ctim;
+
+            localStorage['userdata']=JSON.stringify(obj);
+
+            var divz=document.createElement("div");
+            var div=document.createElement("div");
+            var div1=document.createElement("div");
+            var img=document.createElement("img");
+            var p1=document.createElement("p");
+            var p2=document.createElement("p");
+            var p3=document.createElement("p");
+            var sp1=document.createElement("span");
+            var sp2=document.createElement("span");
+
+            appen.appendChild(divz);
+            divz.style.display="flex";
+            divz.style.borderBottom="1px solid #ccc";
+            divz.appendChild(div1);
+            divz.appendChild(div);
+            div1.appendChild(img);
+            img.src="images/郭子仪.jpg";
+            img.style.width=100+"px";
+            img.style.height=100+"px";
+
+            div.appendChild(p1);
+            p1.innerHTML="郭子仪";
+            p1.style.color="orange";
+            p1.appendChild(sp1);
+            sp1.innerHTML="分享";
+            sp1.style.color="black";
+            sp1.style.fontSize=14+"px";
+            sp1.style.marginLeft=730+"px";
+
+            div.appendChild(p2);
+            p2.innerHTML=str;
+            p2.style.height=18+"px";
+
+            div.appendChild(p3);
+            p3.innerHTML=ctim;
+            p3.appendChild(sp2);
+            sp2.innerHTML='<a href="">删除</a>'+"&nbsp;&nbsp;&nbsp;"+"<span id='cou'>159</span>"+"&nbsp;&nbsp;"+"<img src='images/bg2.jpg' id='zan' style='width:15px;height:15px;'/>"+"&nbsp;&nbsp;&nbsp;"+"回复";
+            sp2.style.marginLeft=455+"px";
+            p3.style.height=18+"px";
+            p3.style.marginTop=-5+"px";
+            
+            inp.value="";
+            countt.innerHTML="0";
+        }
+    }
+
+    window.onload=function(){
+        if(window.localStorage!=""){
+            var objstr=localStorage['userdata'];
+            if(typeof objstr!="undefined"){
+                var obj=JSON.parse(objstr);
+
+                var divz=document.createElement("div");
+                var div=document.createElement("div");
+                var div1=document.createElement("div");
+                var img=document.createElement("img");
+                var p1=document.createElement("p");
+                var p2=document.createElement("p");
+                var p3=document.createElement("p");
+                var sp1=document.createElement("span");
+                var sp2=document.createElement("span");
+
+                appen.appendChild(divz);
+                divz.style.display="flex";
+                divz.style.borderBottom="1px solid #ccc";
+                divz.appendChild(div1);
+                divz.appendChild(div);
+                div1.appendChild(img);
+                img.src="images/fDRw8gm9XazHuqiccYQiyb.jpg";
+                img.style.width=100+"px";
+                img.style.height=100+"px";
+
+                div.appendChild(p1);
+                p1.innerHTML="亚里士多德";
+                p1.style.color="orange";
+                p1.appendChild(sp1);
+                sp1.innerHTML="分享";
+                sp1.style.color="black";
+                sp1.style.fontSize=14+"px";
+                sp1.style.marginLeft=700+"px";
+
+                div.appendChild(p2);
+                p2.innerHTML=obj.val;
+                p2.style.height=18+"px";
+
+                div.appendChild(p3);
+                p3.innerHTML=obj.clock;
+                p3.appendChild(sp2);
+                sp2.innerHTML='<a href="">删除</a>'+"&nbsp;&nbsp;&nbsp;"+"<span id='cou'>159</span>"+"&nbsp;&nbsp;"+"<img src='images/bg2.jpg' id='zan' style='width:15px;height:15px;'/>"+"&nbsp;&nbsp;&nbsp;"+"回复";
+                sp2.style.marginLeft=455+"px";
+                p3.style.height=18+"px";
+                p3.style.marginTop=-5+"px";
+
+
+                //点赞
+                var zan=document.getElementById("zan");
+                var cou=document.getElementById("cou");
+                var zancount=0;
+                zan.onclick=function(){
+                    zancount++;
+                    if(zancount%2==1){
+                        cou.innerHTML=160;
+                        zan.src="images/bg3.jpg";
+                    }else{
+                        cou.innerHTML=159;
+                        zan.src="images/bg2.jpg";
+                    }
+                    
+                }
+
+                //删除
+                var del=document.getElementsByTagName("a");
+                del.onclick=function(){
+                    appen.removeChild(divz);
+                }
+            }
+        }
+    }
+
+</script>
+</html>
